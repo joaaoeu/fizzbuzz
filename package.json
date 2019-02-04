@@ -4,7 +4,24 @@
   "description": "A FizzBuzz challenge library with unit tests",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "./node_modules/.bin/eslint src/**/*.js tests/**/*.js",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:watch": "npm test -- --bail --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": ["text", "html"],
+    "include": ["src/**/*.js"],
+    "exclude": ["tests/**/*.spec.js"],
+    "temp-dir": "./coverage/.nyc_ouput"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm run test:coverage"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,5 +40,16 @@
   "bugs": {
     "url": "https://github.com/joaaoeu/fizzbuzz/issues"
   },
-  "homepage": "https://github.com/joaaoeu/fizzbuzz#readme"
+  "homepage": "https://github.com/joaaoeu/fizzbuzz#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "husky": "^1.3.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  }
 }
