@@ -1,0 +1,27 @@
+{
+  "name": "fizzbuzz",
+  "version": "1.0.0",
+  "description": "A FizzBuzz challenge library with unit tests",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaaoeu/fizzbuzz.git"
+  },
+  "keywords": [
+    "fizzbuzz",
+    "challenge",
+    "js",
+    "javascript",
+    "tdd",
+    "bdd"
+  ],
+  "author": "João Vitor Barbosa Brandão <hello@joaao.eu> (https://www.joaao.eu/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joaaoeu/fizzbuzz/issues"
+  },
+  "homepage": "https://github.com/joaaoeu/fizzbuzz#readme"
+}
